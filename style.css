@@ -1,128 +1,138 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: #f4f7fb;
-    color: #333;
+  background: #0f172a;
+  color: #fff;
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: #0d6efd;
-    color: white;
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.6);
+  z-index: 100;
 }
 
-header .logo {
-    font-size: 22px;
-    font-weight: bold;
+.navbar a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-header nav a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-header nav a:hover {
-    text-decoration: underline;
+.navbar a:hover {
+  color: #38bdf8;
 }
 
 /* Hero */
 .hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
+  height: 100vh;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
+  url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+.hero-content h1 {
+  font-size: 52px;
+  animation: slideIn 1s ease;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.hero-content p {
+  margin: 15px 0;
+  font-size: 18px;
 }
 
-.hero button {
-    padding: 12px 25px;
-    border: none;
-    background: #ffc107;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+.hero-content button {
+  padding: 12px 30px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.hero button:hover {
-    background: #ffb000;
+.hero-content button:hover {
+  background: #0ea5e9;
 }
 
 /* Sections */
 .section {
-    padding: 60px 40px;
-    text-align: center;
+  padding: 100px 60px;
+  text-align: center;
 }
 
-.section h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-/* Cards */
 .cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .card {
-    background: white;
-    padding: 25px;
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  width: 260px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s;
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.card:hover {
+  transform: translateY(-15px);
 }
 
 /* Services */
-.services ul {
-    list-style: none;
-    font-size: 18px;
+.services {
+  background: #020617;
 }
 
-.services li {
-    margin: 10px 0;
+.service-box {
+  background: #1e293b;
+  padding: 18px;
+  margin: 12px auto;
+  width: 300px;
+  border-radius: 12px;
 }
 
 /* Contact */
-.contact p {
-    font-size: 18px;
-    margin: 8px 0;
+.contact {
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
 }
 
 /* Footer */
 footer {
-    background: #0d6efd;
-    color: white;
-    text-align: center;
-    padding: 15px;
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
